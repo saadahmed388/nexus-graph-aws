@@ -1,0 +1,41 @@
+# --- Python Artifacts ---
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- Environments & Dependencies ---
+# Crucial: Ignore your local virtual env so it isn't copied over!
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+share/
+include/
+
+# --- Environment Variables & Secrets ---
+.env
+*.env
+.env.*
+secrets/
+.git/
+.gitignore
+
+# --- IDEs and Text Editors ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- OS-generated Files ---
+.DS_Store
+Thumbs.db
