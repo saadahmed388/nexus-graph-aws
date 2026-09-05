@@ -32,4 +32,4 @@ jobs:
         file: ./Dockerfile
         push: true
         # This tags it as username/jira-knowledge-bot-app:latest
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/jira-knowledge-bot-app
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/jira-knowledge-bot-app:v1
