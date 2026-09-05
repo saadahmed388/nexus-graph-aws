@@ -10,11 +10,9 @@ from toolsets.function_tools import FunctionTools
 from neo4j import AsyncGraphDatabase
 from dotenv import load_dotenv
 
-load_dotenv()
-
-NEO4J_URI = os.environ.get("NEO4J_CLOUD_URI")
-NEO4J_USER = os.environ("NEO4J_CLOUD_USER")
-NEO4J_PASSWORD = os.environ("NEO4J_CLOUD_PASS")
+NEO4J_URI = os.environ["NEO4J_CLOUD_URI"]
+NEO4J_USER = os.environ["NEO4J_CLOUD_USER"]
+NEO4J_PASSWORD = os.environ["NEO4J_CLOUD_PASS"]
 driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 
 Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-large", dimensions=3072)
