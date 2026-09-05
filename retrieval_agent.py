@@ -12,9 +12,15 @@ from neo4j import AsyncGraphDatabase
 NEO4J_URI = os.environ["NEO4J_CLOUD_URI"]
 NEO4J_USER = os.environ["NEO4J_CLOUD_USER"]
 NEO4J_PASSWORD = os.environ["NEO4J_CLOUD_PASS"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]api_key=OPENAI_API_KEY
+
 driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 
-Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-large", dimensions=3072)
+Settings.embed_model = OpenAIEmbedding(
+    model="text-embedding-3-large", 
+    dimensions=3072,
+    api_key=OPENAI_API_KEY
+    )
 
 Settings.llm = llm = OpenAIResponses(
     model="gpt-5.6-terra", 
@@ -23,7 +29,8 @@ Settings.llm = llm = OpenAIResponses(
     reasoning_options={
         "effort": "xhigh",
         "summary": "auto",
-    }
+    },
+    api_key=OPENAI_API_KEY
 )
 
 embedding_model = Settings.embed_model
