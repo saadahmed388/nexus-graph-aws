@@ -9,6 +9,8 @@ from schema_and_prompts.system_prompts import intent_resolution_prompt
 from schema_and_prompts.db_schema import GRAPH_DB_SCHEMA_JSON
 from retrieval_agent import function_tools
 
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
 llm = OpenAIResponses(
     model="gpt-5.6-terra", 
     temperature=0.0, 
@@ -16,7 +18,8 @@ llm = OpenAIResponses(
     reasoning_options={
         "effort": "xhigh",
         "summary": "auto",
-    }
+    },
+    api_key=OPENAI_API_KEY
 )
 
 class QueryIntentResult(BaseModel):
