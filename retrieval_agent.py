@@ -8,7 +8,6 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from schema_and_prompts.system_prompts import system_prompt_large_v2
 from toolsets.function_tools import FunctionTools
 from neo4j import AsyncGraphDatabase
-from dotenv import load_dotenv
 
 NEO4J_URI = os.environ["NEO4J_CLOUD_URI"]
 NEO4J_USER = os.environ["NEO4J_CLOUD_USER"]
